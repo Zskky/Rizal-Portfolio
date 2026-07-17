@@ -1,0 +1,485 @@
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('fonts/segoeui.woff2') format('woff2');
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 50px 10vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: rgba(253, 252, 248, 0.97);
+    border-radius: 28px;
+    box-shadow:
+        0 30px 80px rgba(3, 0, 20, 0.55),
+        0 0 0 1px rgba(168, 120, 255, 0.20),
+        0 0 60px rgba(120, 90, 220, 0.15);
+    position: relative;
+    z-index: 1;
+}
+.subtitle { 
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.container h2 {
+    font-size: 1.7rem;
+    font-weight: 450;
+    margin-bottom: 15px;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: black;
+    padding: 60px 20px;
+    position: relative;
+    overflow-x: hidden;
+    background-color: #05030f;
+    background-image:
+        radial-gradient(circle at 22% 15%, rgba(168, 120, 255, 0.30), transparent 40%),
+        radial-gradient(circle at 80% 8%, rgba(56, 189, 248, 0.22), transparent 42%),
+        radial-gradient(circle at 65% 70%, rgba(236, 72, 153, 0.16), transparent 45%),
+        radial-gradient(ellipse at 50% 0%, #1b0f3d 0%, #0a0620 45%, #05030f 80%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* Distant starfield, two depths for a subtle parallax/twinkle feel */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background-repeat: repeat;
+}
+
+body::before {
+    background-image:
+        radial-gradient(1.6px 1.6px at 12% 22%, #fff, transparent 60%),
+        radial-gradient(1.2px 1.2px at 28% 68%, #fff, transparent 60%),
+        radial-gradient(1.8px 1.8px at 45% 12%, #fff, transparent 60%),
+        radial-gradient(1.3px 1.3px at 62% 80%, #fff, transparent 60%),
+        radial-gradient(1.5px 1.5px at 78% 35%, #fff, transparent 60%),
+        radial-gradient(1.2px 1.2px at 91% 60%, #fff, transparent 60%),
+        radial-gradient(1.6px 1.6px at 6% 88%, #fff, transparent 60%),
+        radial-gradient(1.4px 1.4px at 55% 45%, #fff, transparent 60%);
+    background-size: 340px 340px;
+    animation: twinkle 4s ease-in-out infinite alternate;
+}
+
+body::after {
+    background-image:
+        radial-gradient(1px 1px at 18% 40%, rgba(255,255,255,0.85), transparent 60%),
+        radial-gradient(1px 1px at 36% 88%, rgba(255,255,255,0.85), transparent 60%),
+        radial-gradient(1.4px 1.4px at 52% 20%, rgba(255,255,255,0.85), transparent 60%),
+        radial-gradient(1px 1px at 70% 55%, rgba(255,255,255,0.85), transparent 60%),
+        radial-gradient(1.2px 1.2px at 85% 15%, rgba(255,255,255,0.85), transparent 60%),
+        radial-gradient(1px 1px at 95% 85%, rgba(255,255,255,0.85), transparent 60%);
+    background-size: 220px 220px;
+    animation: twinkle 6s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes twinkle {
+    0%   { opacity: 0.55; }
+    100% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body::before,
+    body::after {
+        animation: none;
+    }
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    font-family: cursive, "Brush Script MT", "Comic Sans MS", "Segoe Script";
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+    font-family: cursive, "Brush Script MT", "Comic Sans MS", "Segoe Script";   
+}
+
+
+.about-flex {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.about-flex .intro {
+    flex: 1 1 480px;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.ME {
+    flex: 0 0 auto;
+}
+
+.ME img {
+    display: block;
+    width: 300px;
+    height: auto;
+    border-radius: 18px;
+    box-shadow: 0 18px 40px rgba(10, 30, 45, 0.35);
+    border: 4px solid #ffffff;
+}
+
+@media (max-width: 800px) {
+    .about-flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .about-flex .intro {
+        text-align: center;
+    }
+}
+
+.intro {
+    font-size: 1.50rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+b {
+    font-weight: 600;
+}
+strong {
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 15px;   
+}
+
+.CCA h2, 
+.CCA h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.memorable {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.CCA p,
+.CCA h3,
+.CCA h4,
+.CCA li {
+    font-size: 1.5rem;
+}
+
+.cca-reflection {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+
+.int {
+    font-size: 1.7rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.str {
+    font-size: 1.7rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.val {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.lead {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.work {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.pro {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 0 0 20px 0;
+}
+
+.tab-button {
+    border: 1px solid #0a0a0a;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.05rem;
+}
+
+.tab-button.active {
+    background: #0e7c86;
+    color: white;
+    border-color: #0e7c86;
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+}
+h2 {font-weight: bold}
+.wI {text-align: left}
+
+/* Work photos side-by-side */
+.work-photos {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* Interests & Strengths side-by-side */
+.int-str {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.int-str .int,
+.int-str .str {
+    flex: 1 1 260px;
+    max-width: 500px;
+}
+
+
+.work-photos figure {
+    margin: 0;
+    flex: 1 1 300px;
+    max-width: 500px;
+}
+
+.work-photos img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.work-photos figcaption {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 1.1rem;
+}
+
+/* ===== CCA media layout (webBased.html) ===== */
+.cca-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 24px;
+    margin-top: 10px;
+    align-items: start;
+}
+
+.cca-reflection {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.NCC {
+    grid-column: 2;
+    grid-row: 1; /* sits beside the reflection text, on the right */
+}
+
+.NCC img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.GRAD {
+    grid-column: 1 / span 2;
+    grid-row: 2; /* below the reflection/salute row, spanning full width */
+}
+
+.FSD {
+    grid-column: 1 / span 2;
+    grid-row: 3; /* sits directly under GRAD, spanning full width */
+}
+
+@media (max-width: 720px) {
+    .cca-layout {
+        grid-template-columns: 1fr;
+    }
+    .cca-reflection,
+    .NCC,
+    .GRAD,
+    .FSD {
+        grid-column: 1;
+        grid-row: auto;
+    }
+}
+
+/* GRAD: side-by-side with a single caption */
+.grad-images {
+    display: flex;
+    gap: 14px;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap; /* keep side-by-side on normal screens */
+}
+
+.GRAD img {
+    flex: 0 1 500px;
+    width: 500px;
+    height: 300px;
+    display: block;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+@media (max-width: 720px) {
+    .grad-images {
+        flex-wrap: wrap; /* small screens: allow stacking */
+    }
+
+    .GRAD img {
+        flex: 1 1 250px;
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+/* FSD: 3 side-by-side + caption for all 3 */
+.FSD {
+    margin: 0;
+    padding: 0;
+    /* shorten the FSD section visually */
+}
+
+/* Make FSD images less tall / shorter */
+.FSD .fsd-images img {
+    object-fit: cover;
+    height: 200px;
+}
+
+.fsd-images {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.fsd-images img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+@media (min-width: 700px) {
+    .fsd-images img {
+        width: calc(33.333% - 10px);
+        max-width: none;
+    }
+}
+
+.cca-caption {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.NCC {
+    grid-column: 2;
+    grid-row: 1; /* sits beside the reflection text, on the right */
+    margin-top: 3rem; /* offsets past the "CCA Reflection" heading so the image
+                          lines up with the start of the paragraph text; adjust
+                          this value up/down if it's not quite lined up */
+}
+
+.achievements {
+    font-size: 2rem;
+    font-weight: 300px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: left;
+    font-display: auto;
+    margin-bottom: 20px;
+    line-height: 75px;
+}
+
+.achievements h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-decoration: wavy;
+}
+
+.aspiration {
+    line-break: 20px;
+    font-size: 1.7rem;
+    font-weight: 250;
+    font-family:'Times New Roman', Times, serif
+}
+
+br {
+    display: block;
+    margin-top: 20px;
+    content: "";
+}
+
+.passion {
+    line-break: 20px;
+    font-size: 1.7rem;
+    font-weight: 250;
+    font-family:'Times New Roman', Times, serif
+}
+
+
+
+
+
